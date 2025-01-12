@@ -53,7 +53,7 @@ const Footer = (props) => {
               <li>
                 <span className="footer__content">
                   <IoLocation className="footer__icon" />
-                  01 Vo Van Ngan, TP. Thu Duc, TP. HCM
+                  99 Pham Van Dong, Thu Duc, Ho Chi Minh
                 </span>
               </li>
               <li>
@@ -65,7 +65,7 @@ const Footer = (props) => {
               <li>
                 <span className="footer__content">
                   <IoCall className="footer__icon" />
-                  (+84) 987654321
+                  (+84) 123456789
                 </span>
               </li>
             </ul>

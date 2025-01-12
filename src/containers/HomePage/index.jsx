@@ -8,6 +8,7 @@ import { generatePictureUrl } from "../../urlConfig";
 import formatThousand from "../../utils/formatThousand";
 import { isNew } from "../../utils/isNew";
 import "./style.css";
+import { images } from "../../images/images";
 
 function HomePage() {
   const dispatch = useDispatch();
@@ -27,58 +28,44 @@ function HomePage() {
   const renderTabItems = () => {
     const items = [
       {
-        image:
-          "https://res.cloudinary.com/quangtien/image/upload/v1640266776/ic-tab1_zsfoyz.png",
+        image: images.ic1.default,
         slug: "",
         color: "tab__item--black",
       },
       {
-        image:
-          "https://res.cloudinary.com/quangtien/image/upload/v1640266827/ic-tab2_rpfuty.png",
+        image: images.ic2.default,
         slug: "",
         color: "tab__item--green",
       },
       {
-        image:
-          "https://res.cloudinary.com/quangtien/image/upload/v1640266941/ic-tab3_he8wqp.png",
+        image: images.ic3.default,
         slug: "",
         color: "tab__item--yellow",
       },
       {
-        image:
-          "https://res.cloudinary.com/quangtien/image/upload/v1640266971/ic-tab5_ptibsd.png",
+        image: images.ic4.default,
         slug: "",
         color: "tab__item--orange",
       },
       {
-        image:
-          "https://res.cloudinary.com/quangtien/image/upload/v1632565661/ic-tab4_t5uh31.png",
+        image: images.ic5.default,
         slug: "",
         color: "tab__item--pink",
       },
       {
-        image:
-          "https://res.cloudinary.com/quangtien/image/upload/v1640267006/ic-tab6_gkpqiw.png",
+        image: images.ic6.default,
         slug: "",
         color: "tab__item--dark-blue",
       },
       {
-        image:
-          "https://res.cloudinary.com/quangtien/image/upload/v1640267062/ic-tab7_u7rrgr.png",
+        image: images.ic7.default,
         slug: "",
         color: "tab__item--blue",
       },
       {
-        image:
-          "https://res.cloudinary.com/quangtien/image/upload/v1640267149/ic-tab8_teo8at.png",
+        image: images.ic8.default,
         slug: "",
         color: "tab__item--purple",
-      },
-      {
-        image:
-          "https://res.cloudinary.com/quangtien/image/upload/v1640267187/ic-tab9_bmpqhh.png",
-        slug: "",
-        color: "tab__item--gray",
       },
     ];
     return (
@@ -86,16 +73,6 @@ function HomePage() {
         {items.map((item, index) => (
           <li
             className={`tab__item flex-center ${item.color}`}
-            // onClick={() => {
-            //   setTabProducts(
-            //     [...products]
-            //       .filter((p) => p.category === item.slug)
-            //       .sort(
-            //         (p1, p2) => new Date(p2.createdAt) - new Date(p1.createdAt)
-            //       )
-            //       .slice(0, 8)
-            //   );
-            // }}
             key={index}
           >
             <img src={item.image} alt="" />
@@ -112,15 +89,10 @@ function HomePage() {
             <div>
               <img
                 alt=""
-                src="https://res.cloudinary.com/quangtien/image/upload/v1632563480/hinh1_xvtbxo.png"
+                src="https://res.cloudinary.com/ddeln1acg/image/upload/v1736588864/smart-phone-banner-design-template-caa98978d25e965873a22b01acb99ba7_screen_zfggrz.jpg"
               />
             </div>
-            <div>
-              <img
-                alt=""
-                src="https://res.cloudinary.com/quangtien/image/upload/v1632563480/hinh2_m5wtby.jpg"
-              />
-            </div>
+          
           </Carousel>
         </div>
         <div className="col lg-3 advertisement">
@@ -129,7 +101,7 @@ function HomePage() {
             <img
               className="advertisement__image"
               alt=""
-              src="https://res.cloudinary.com/quangtien/image/upload/v1640960327/hinh3_vk3jzp_o23p4i.jpg"
+              src="https://res.cloudinary.com/ddeln1acg/image/upload/v1736589100/39319_j7nvbf.jpg"
             />
           </div>
           <div className="advertisement__wrapper">
@@ -137,7 +109,7 @@ function HomePage() {
             <img
               className="advertisement__image"
               alt=""
-              src="https://res.cloudinary.com/quangtien/image/upload/v1632563481/hinh4_ohqz6m.jpg"
+              src="https://res.cloudinary.com/ddeln1acg/image/upload/v1736591427/6322_vfzbf3.jpg"
             />
           </div>
         </div>
@@ -146,7 +118,7 @@ function HomePage() {
         <div className="col lg-3">
           <div className="policy">
             <img
-              src="https://res.cloudinary.com/quangtien/image/upload/v1632563970/policy4_mjhesj.png"
+              src={images.ic10.default}
               alt=""
             />
             <p className="policy__content">Free delivery with $500</p>
@@ -155,7 +127,7 @@ function HomePage() {
         <div className="col lg-3">
           <div className="policy">
             <img
-              src="https://res.cloudinary.com/quangtien/image/upload/v1632563958/policy5_oxhwme.png"
+              src={images.ic11.default}
               alt=""
             />
             <p className="policy__content">100% Payment Secured</p>
@@ -164,7 +136,7 @@ function HomePage() {
         <div className="col lg-3">
           <div className="policy">
             <img
-              src="https://res.cloudinary.com/quangtien/image/upload/v1632563941/policy6_nje7sg.png"
+              src={images.ic12.default}
               alt=""
             />
             <p className="policy__content">24hours / 7days Support</p>
@@ -173,7 +145,7 @@ function HomePage() {
         <div className="col lg-3">
           <div className="policy">
             <img
-              src="https://res.cloudinary.com/quangtien/image/upload/v1632563925/policy7_zczunq.png"
+              src={images.ic13.default}
               alt=""
             />
             <p className="policy__content">Best Price Guaranteed</p>
@@ -228,7 +200,7 @@ function HomePage() {
           <div className="advertisement__wrapper">
             <div className="advertisement__effect"></div>
             <img
-              src="https://res.cloudinary.com/quangtien/image/upload/v1632580225/home3-banner3_or15sh.jpg"
+              src="https://res.cloudinary.com/ddeln1acg/image/upload/v1736591918/home3-banner3_or15sh_ia6ckg.jpg"
               alt=""
               className="advertisement__image"
             />
@@ -236,7 +208,7 @@ function HomePage() {
           <div className="advertisement__wrapper">
             <div className="advertisement__effect"></div>
             <img
-              src="https://res.cloudinary.com/quangtien/image/upload/v1632580214/home3-banner4_uf0fux.jpg"
+              src="https://res.cloudinary.com/ddeln1acg/image/upload/v1736591917/home3-banner4_uf0fux_onpxvx.jpg"
               alt=""
               className="advertisement__image"
             />
@@ -246,7 +218,7 @@ function HomePage() {
           <div className="advertisement__wrapper">
             <div className="advertisement__effect"></div>
             <img
-              src="https://res.cloudinary.com/quangtien/image/upload/v1632580206/home3-banner5_ppjglk.jpg"
+              src="https://res.cloudinary.com/ddeln1acg/image/upload/v1736591918/home3-banner5_ppjglk_kel5aa.jpg"
               alt=""
               className="advertisement__image"
             />

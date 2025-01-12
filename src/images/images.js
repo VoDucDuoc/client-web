@@ -1,0 +1,15 @@
+export const images = {
+  ic1: require('./ic1.png'),
+  ic2: require('./ic2.png'),
+  ic3: require('./ic3.png'),
+  ic4: require('./ic4.png'),
+  ic5: require('./ic5.png'),
+  ic6: require('./ic6.png'),
+  ic7: require('./ic7.png'),
+  ic8: require('./ic8.png'),
+  ic9: require('./ic9.png'),
+  ic10: require('./ic10.png'),
+  ic11: require('./ic11.png'),
+  ic12: require('./ic12.png'),
+  ic13: require('./ic13.png'),
+}

@@ -7,6 +7,7 @@ import Button from "../../components/UI/Button";
 import { generatePictureUrl } from "../../urlConfig";
 import formatThousand from "../../utils/formatThousand";
 import "./style.css";
+import { authConstants } from "../../actions/constants";
 function CartPage(props) {
   const cart = useSelector((state) => state.cart);
   const [cartItems, setCartItems] = useState(cart.cartItems);
@@ -77,7 +78,6 @@ function CartPage(props) {
                 </button>
               </div>
               <p className="cart__item-price">
-                
                 {formatThousand(cartItems[key].quantity * cartItems[key].price)}
               </p>
               {props.isCheckout && <div className="cart__item-remove"></div>}
@@ -118,16 +118,23 @@ function CartPage(props) {
           {formatThousand(getTotalPrice())}
         </p>
       </div>
-      {/* <div className="cart__price-row mt-8">
-        <p className="cart__price-row-label">Ship</p>
-        <p className="cart__price-row-value">$0</p>
-      </div> */}
       <div className="cart__price-row mt-32">
         <p className="cart__price-row-key">Total</p>
         <p>{formatThousand(getTotalPrice())}</p>
       </div>
       {getTotalAmount() !== 0 && (
-        <Link to="/checkout" className="cart__price-nagivate">
+        <Link
+          onClick={(e) => {
+            if (!auth.authenticate) {
+              e.preventDefault();
+              dispatch({
+                type: authConstants.SHOW_LOGIN_MODAL,
+              });
+            }
+          }}
+          to="/checkout"
+          className="cart__price-nagivate"
+        >
           <Button black title="Proceed to checkout" className="mt-32"></Button>
         </Link>
       )}
@@ -136,7 +143,6 @@ function CartPage(props) {
   if (props.isCheckout) {
     return renderCartItems();
   }
-  // fsz 22px py 16px
   return (
     <div className="cartContainer mt-32">
       <div className="grid wide">

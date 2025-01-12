@@ -174,31 +174,6 @@ export const getBySlug = (slug) => {
     }
   };
 };
-// export const getProductPage = (params) => {
-//   return async (dispatch) => {
-//     try {
-//       const { categoryId, type } = params;
-//       dispatch({ type: productConstants.GET_PAGE_REQUEST });
-//       const res = await axios.get(`page/${categoryId}/${type}`);
-//       if (res.status === 200) {
-//         dispatch({
-//           type: productConstants.GET_PAGE_SUCCESS,
-//           payload: { page: res.data.page },
-//         });
-//       } else {
-//         dispatch({
-//           type: productConstants.GET_PAGE_FAILURE,
-//           payload: { error: res.data.error },
-//         });
-//       }
-//     } catch (error) {
-//       dispatch({
-//         type: productConstants.GET_PAGE_FAILURE,
-//         payload: { error },
-//       });
-//     }
-//   };
-// };
 
 export const getProductById = (params) => {
   return async (dispatch) => {

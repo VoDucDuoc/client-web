@@ -266,8 +266,6 @@ function SearchPage(props) {
                     name={field}
                     onChange={() => {
                       let newQuery = fulfillQuery({ page: 1, q });
-                      // kiểm tra field name có trong query chưa
-                      // nếu chưa thì tạo thêm property với giá trị là một mảng, có phần tử đầu tiên là value
                       if (!hasField) {
                         newQuery = {
                           ...newQuery,
@@ -280,12 +278,9 @@ function SearchPage(props) {
                         updateQueryString(newQuery);
                         return;
                       }
-                      // nếu rồi thì
-                      // kiếm trả giá trị có trong mảng của field chưa
                       const indexValue = query.category.findIndex(
                         (val) => val === field
                       );
-                      // nếu chưa thì thêm
                       if (indexValue < 0) {
                         newQuery = {
                           ...newQuery,
@@ -301,7 +296,6 @@ function SearchPage(props) {
 
                         return;
                       }
-                      // nếu có thì xóa
                       newQuery = { ...query, ...newQuery };
 
                       const filter = newQuery.category.filter(
@@ -319,7 +313,6 @@ function SearchPage(props) {
                         return { ...prev, category: filter };
                       });
 
-                      // kiem tra nếu giá trị là rỗng thì xóa luôn cái property đó
                       if (query.category.length === 0) {
                         delete newQuery.category;
                         setQuery((prev) => {
@@ -366,8 +359,6 @@ function SearchPage(props) {
                     name={field}
                     onChange={() => {
                       let newQuery = fulfillQuery({ page: 1, q });
-                      // kiểm tra field name có trong query chưa
-                      // nếu chưa thì tạo thêm property với giá trị là một mảng, có phần tử đầu tiên là value
                       if (!hasField) {
                         newQuery = { ...newQuery, Brand: [field] };
                         setQuery((prev) => ({
@@ -377,12 +368,9 @@ function SearchPage(props) {
                         updateQueryString(newQuery);
                         return;
                       }
-                      // nếu rồi thì
-                      // kiếm trả giá trị có trong mảng của field chưa
                       const indexValue = query.Brand.findIndex(
                         (val) => val === field
                       );
-                      // nếu chưa thì thêm
                       if (indexValue < 0) {
                         newQuery = {
                           ...newQuery,
@@ -398,7 +386,6 @@ function SearchPage(props) {
 
                         return;
                       }
-                      // nếu có thì xóa
                       newQuery = { ...query, ...newQuery };
 
                       const filter = newQuery.Brand.filter(
@@ -416,7 +403,6 @@ function SearchPage(props) {
                         return { ...prev, Brand: filter };
                       });
 
-                      // kiem tra nếu giá trị là rỗng thì xóa luôn cái property đó
                       if (query.Brand.length === 0) {
                         delete newQuery.Brand;
                         setQuery((prev) => {
@@ -548,8 +534,6 @@ function SearchPage(props) {
                     onChange={() => {
                       let newQuery = { page: 1 };
 
-                      // kiểm tra field name có trong query chưa
-                      // nếu chưa thì tạo thêm property với giá trị là một mảng, có phần tử đầu tiên là value
                       if (!hasField) {
                         newQuery = { ...newQuery, labels: [field.name] };
                         setQuery((prev) => ({
@@ -559,12 +543,9 @@ function SearchPage(props) {
                         updateQueryString(newQuery);
                         return;
                       }
-                      // nếu rồi thì
-                      // kiếm trả giá trị có trong mảng của field chưa
                       const indexValue = query.labels.findIndex(
                         (val) => val === field.name
                       );
-                      // nếu chưa thì thêm
                       if (indexValue < 0) {
                         newQuery = {
                           ...newQuery,
@@ -582,7 +563,6 @@ function SearchPage(props) {
                         });
                         return;
                       }
-                      // nếu có thì xóa
                       newQuery = { ...query, ...newQuery };
                       const filter = newQuery.labels.filter(
                         (val) => val !== field.name
@@ -599,7 +579,6 @@ function SearchPage(props) {
                         return { ...prev, labels: filter };
                       });
 
-                      // kiem tra nếu giá trị là rỗng thì xóa luôn cái property đó
                       if (query.labels.length === 0) {
                         delete newQuery.labels;
                         setQuery((prev) => {
@@ -732,7 +711,7 @@ function SearchPage(props) {
                 </p>
                 <div className="not-found">
                   <img
-                    src="https://res.cloudinary.com/quangtien/image/upload/v1634491963/ccef151a3e6dfc9c07e7e195daa3fe25_v6spgl.png"
+                    src="https://res.cloudinary.com/ddeln1acg/image/upload/v1736587669/6167023_psaiqv.webp"
                     alt=""
                     className="not-found__image"
                   />

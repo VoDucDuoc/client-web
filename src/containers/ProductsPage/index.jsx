@@ -247,8 +247,6 @@ function ProductPage(props) {
                       name={field.name}
                       onChange={() => {
                         let newQuery = { page: 1 };
-                        // kiểm tra field name có trong query chưa
-                        // nếu chưa thì tạo thêm property với giá trị là một mảng, có phần tử đầu tiên là value
                         if (!hasField) {
                           newQuery = { ...newQuery, [field.name]: [value] };
                           setQuery((prev) => ({
@@ -258,12 +256,9 @@ function ProductPage(props) {
                           updateQueryString(newQuery);
                           return;
                         }
-                        // nếu rồi thì
-                        // kiếm trả giá trị có trong mảng của field chưa
                         const indexValue = query[field.name].findIndex(
                           (val) => val === value
                         );
-                        // nếu chưa thì thêm
                         if (indexValue < 0) {
                           newQuery = {
                             ...newQuery,
@@ -278,7 +273,6 @@ function ProductPage(props) {
                           updateQueryString(newQuery);
                           return;
                         }
-                        // nếu có thì xóa
                         newQuery = { ...query, ...newQuery };
                         const filter = newQuery[field.name].filter(
                           (val) => val !== value
@@ -294,8 +288,6 @@ function ProductPage(props) {
                           );
                           return { ...prev, [field.name]: filter };
                         });
-
-                        // kiem tra nếu giá trị là rỗng thì xóa luôn cái property đó
                         if (query[field.name].length === 0) {
                           delete newQuery[field.name];
                           setQuery((prev) => {
@@ -357,8 +349,6 @@ function ProductPage(props) {
                       let newQuery = { page: 1 };
                       console.log({ query });
 
-                      // kiểm tra field name có trong query chưa
-                      // nếu chưa thì tạo thêm property với giá trị là một mảng, có phần tử đầu tiên là value
                       if (!hasField) {
                         newQuery = { ...newQuery, labels: [field.name] };
                         setQuery((prev) => ({
@@ -368,12 +358,9 @@ function ProductPage(props) {
                         updateQueryString(newQuery);
                         return;
                       }
-                      // nếu rồi thì
-                      // kiếm trả giá trị có trong mảng của field chưa
                       const indexValue = query.labels.findIndex(
                         (val) => val === field.name
                       );
-                      // nếu chưa thì thêm
                       if (indexValue < 0) {
                         newQuery = {
                           ...newQuery,
@@ -388,7 +375,6 @@ function ProductPage(props) {
                         updateQueryString(newQuery);
                         return;
                       }
-                      // nếu có thì xóa
                       newQuery = { ...query, ...newQuery };
                       const filter = newQuery.labels.filter(
                         (val) => val !== field.name
@@ -405,7 +391,6 @@ function ProductPage(props) {
                         return { ...prev, labels: filter };
                       });
 
-                      // kiem tra nếu giá trị là rỗng thì xóa luôn cái property đó
                       if (query.labels.length === 0) {
                         delete newQuery.labels;
                         setQuery((prev) => {
@@ -558,7 +543,7 @@ function ProductPage(props) {
                   </p>
                   <div className="not-found">
                     <img
-                      src="https://res.cloudinary.com/quangtien/image/upload/v1634491963/ccef151a3e6dfc9c07e7e195daa3fe25_v6spgl.png"
+                      src="https://res.cloudinary.com/ddeln1acg/image/upload/v1736587669/6167023_psaiqv.webp"
                       alt=""
                       className="not-found__image"
                     />
