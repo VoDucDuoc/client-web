@@ -81,6 +81,7 @@ function HomePage() {
       </ul>
     );
   };
+  console.log({products})
   return (
     <div className="grid wide">
       <div className="row mt-32">
@@ -230,7 +231,7 @@ function HomePage() {
           <p className="homepage-title">Onsale Products</p>
         </div>
         {products &&
-          [...products]
+          [...products].filter((product) => Number(product.sale) > 0)
             .sort((p1, p2) => Number(p2.sale) - Number(p1.sale))
             .slice(0, 8)
             .map((product, index) => (
@@ -277,6 +278,7 @@ function HomePage() {
         </div>
         {products &&
           [...products]
+          .filter((product) => Number(product.sale) > 30)
             .sort((p1, p2) => Number(p1.price) - Number(p2.price))
             .slice(0, 8)
             .map((product, index) => (
