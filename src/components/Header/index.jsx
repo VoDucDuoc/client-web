@@ -265,12 +265,6 @@ const Header = (props) => {
               }}
             />
           </div>
-          <div className="col sm-12 md-12 lg-12 mt-16 socials flex-center">
-            <p className="socials__label">Hope you have fun with us</p>
-            <div className="mt-12">
-              <img className="logo" src={logo} alt="" />
-            </div>
-          </div>
         </div>
       </Modal>
     );
@@ -324,12 +318,6 @@ const Header = (props) => {
                 setSigninModal(true);
               }}
             />
-          </div>
-          <div className="col sm-12 md-12 lg-12 mt-16 socials flex-center">
-            <p className="socials__label">Hope you have fun with us</p>
-            <div className="mt-12">
-              <img className="logo" src={logo} alt="" />
-            </div>
           </div>
         </div>
       </Modal>
@@ -392,12 +380,6 @@ const Header = (props) => {
               onClick={handleChangePassword}
               loading={auth.isChangePassword}
             />
-          </div>
-          <div className="col sm-12 md-12 lg-12 mt-16 socials flex-center">
-            <p className="socials__label">Hope you have fun with us</p>
-            <div className="mt-12">
-              <img className="logo" src={logo} alt="" />
-            </div>
           </div>
         </div>
       </Modal>

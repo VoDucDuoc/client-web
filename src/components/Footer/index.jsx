@@ -8,46 +8,6 @@ const Footer = (props) => {
       <div className="grid wide">
         <div className="row mt-32">
           <div className="col lg-4">
-            <p className="footer__heading">FIND IT FAST</p>
-            <ul className="footer__list">
-              <li>
-                <Link className="footer__link" to="/Samsung">
-                  Laptop
-                </Link>
-              </li>
-              <li>
-                <Link className="footer__link" to="/Iphone">
-                  Cell phone
-                </Link>
-              </li>
-              <li>
-                <Link className="footer__link" to="/Oppo">
-                  Headphone
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div className="col lg-4">
-            <p className="footer__heading">MY ACCOUNT</p>
-            <ul className="footer__list">
-              <li>
-                <Link className="footer__link" to="/account/order">
-                  Order history
-                </Link>
-              </li>
-              <li>
-                <Link className="footer__link" to="/cart">
-                  Cart
-                </Link>
-              </li>
-              <li>
-                <Link className="footer__link" to="/checkout">
-                  Checkout
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div className="col lg-4">
             <p className="footer__heading">CONTACT US</p>
             <ul className="footer__list">
               <li>

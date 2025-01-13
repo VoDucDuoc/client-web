@@ -166,7 +166,9 @@ const ComparePage = (props) => {
                     <div className="product__info-name">{product1.name}</div>
                     <div className="product__info-price">
                       <p className="product__info-price--old">
-                        {formatThousand(product1.regularPrice)}
+                        {product1.regularPrice != product1.price
+                          ? formatThousand(product1.regularPrice)
+                          : ""}
                       </p>
                       <p className="product__info-price--current">
                         {formatThousand(product1.price)}
@@ -226,7 +228,9 @@ const ComparePage = (props) => {
                     <div className="product__info-name">{product2.name}</div>
                     <div className="product__info-price">
                       <p className="product__info-price--old">
-                        {formatThousand(product2.regularPrice)}
+                      {product1.regularPrice != product1.price
+                          ? formatThousand(product1.regularPrice)
+                          : ""}
                       </p>
                       <p className="product__info-price--current">
                         {formatThousand(product2.price)}

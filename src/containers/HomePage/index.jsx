@@ -71,17 +71,13 @@ function HomePage() {
     return (
       <ul className="col lg-12 tab">
         {items.map((item, index) => (
-          <li
-            className={`tab__item flex-center ${item.color}`}
-            key={index}
-          >
+          <li className={`tab__item flex-center ${item.color}`} key={index}>
             <img src={item.image} alt="" />
           </li>
         ))}
       </ul>
     );
   };
-  console.log({products})
   return (
     <div className="grid wide">
       <div className="row mt-32">
@@ -93,7 +89,6 @@ function HomePage() {
                 src="https://res.cloudinary.com/ddeln1acg/image/upload/v1736588864/smart-phone-banner-design-template-caa98978d25e965873a22b01acb99ba7_screen_zfggrz.jpg"
               />
             </div>
-          
           </Carousel>
         </div>
         <div className="col lg-3 advertisement">
@@ -118,37 +113,25 @@ function HomePage() {
       <div className="row mt-32 border-bottom">
         <div className="col lg-3">
           <div className="policy">
-            <img
-              src={images.ic10.default}
-              alt=""
-            />
+            <img src={images.ic10.default} alt="" />
             <p className="policy__content">Free delivery with $500</p>
           </div>
         </div>
         <div className="col lg-3">
           <div className="policy">
-            <img
-              src={images.ic11.default}
-              alt=""
-            />
+            <img src={images.ic11.default} alt="" />
             <p className="policy__content">100% Payment Secured</p>
           </div>
         </div>
         <div className="col lg-3">
           <div className="policy">
-            <img
-              src={images.ic12.default}
-              alt=""
-            />
+            <img src={images.ic12.default} alt="" />
             <p className="policy__content">24hours / 7days Support</p>
           </div>
         </div>
         <div className="col lg-3">
           <div className="policy">
-            <img
-              src={images.ic13.default}
-              alt=""
-            />
+            <img src={images.ic13.default} alt="" />
             <p className="policy__content">Best Price Guaranteed</p>
           </div>
         </div>
@@ -188,7 +171,9 @@ function HomePage() {
                       {formatThousand(product.price)}
                     </span>
                     <span className="product__info-price--old">
-                      {formatThousand(product.regularPrice)}
+                      {product.regularPrice != product.price
+                        ? formatThousand(product.regularPrice)
+                        : ""}
                     </span>
                   </div>
                 </div>
@@ -231,7 +216,8 @@ function HomePage() {
           <p className="homepage-title">Onsale Products</p>
         </div>
         {products &&
-          [...products].filter((product) => Number(product.sale) > 0)
+          [...products]
+            .filter((product) => Number(product.sale) > 0)
             .sort((p1, p2) => Number(p2.sale) - Number(p1.sale))
             .slice(0, 8)
             .map((product, index) => (
@@ -252,7 +238,9 @@ function HomePage() {
                         {formatThousand(product.price)}
                       </span>
                       <span className="small-product__info-price--old">
-                        {formatThousand(product.regularPrice)}
+                      {product.regularPrice != product.price
+                          ? formatThousand(product.regularPrice)
+                          : ""}
                       </span>
                     </div>
                     <div className="product__badge">
@@ -278,7 +266,7 @@ function HomePage() {
         </div>
         {products &&
           [...products]
-          .filter((product) => Number(product.sale) > 30)
+            .filter((product) => Number(product.sale) > 30)
             .sort((p1, p2) => Number(p1.price) - Number(p2.price))
             .slice(0, 8)
             .map((product, index) => (
@@ -299,7 +287,9 @@ function HomePage() {
                         {formatThousand(product.price)}
                       </span>
                       <span className="small-product__info-price--old">
-                        {formatThousand(product.regularPrice)}
+                      {product.regularPrice != product.price
+                          ? formatThousand(product.regularPrice)
+                          : ""}
                       </span>
                     </div>
                     <div className="product__badge">
